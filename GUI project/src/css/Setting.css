@@ -19,21 +19,9 @@
         margin-top: 1em;
         margin-bottom: 0.5em;
         font-weight: bold;
-        font-size: 4vh;
+        font-size: 1.5em;
+
     }
-
-    @media only screen and (max-width: 200px) {
-
-        .Box_Title{
-            padding-left: 1em;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-            font-weight: bold;
-            font-size: 3vh;
-        }
-    
-    }
-
 
     /* Whole of main menu value here */
 
@@ -133,42 +121,23 @@
     .C_F{
         margin: auto;
         margin-right: 0;
-        width: 6vh;
+        width: 100px;
     }
 
-    @media only screen and (min-width: 1000px) {
-
-        .C_F{
-            margin: auto;
-            margin-right: 0;
-            width: 7vw;
-        }
-    
-    }
-
-    @media only screen and (min-height: 1000px) {
-
-        .C_F{
-            margin: auto;
-            margin-right: 0;
-            width: 7vh;
-        }
-    
-    }
     /* ---------------------------------------------------------------------- */
     
     /* Wind unit */
 
-    .UnitContainer{
+    .WindUnitContainer{
         display: flex;
-        padding-top: 8%;
+        padding-top: 3em;
         width: 100%;
         align-self: center;
         display: flex;
         text-align: center;
     }
 
-    .Unit{
+    .WindUnit{
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -177,7 +146,7 @@
         text-align: center;
     }
 
-    .X_title{
+    .Wind_title{
         max-height: 100%;
         height: auto;
         text-align: left;
@@ -187,21 +156,21 @@
 
     }
 
-    .X_units{
+    .W_units{
         max-height: 100%;
         height: auto;
         text-align: left;
         margin: auto;
-        margin-left: 0.70em;
+        margin-left: 0.2em;
         font-size: 3vw;
         color: #00F0FF;
-
     }
 
     .arrow{
-        margin: auto;
-        margin-right: 1.5vh;
-        width: 5vw;
+        width: 3em;
+        padding: 1em;
+        margin-right: 1em;
+
     }
 
 }
