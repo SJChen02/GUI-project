@@ -200,12 +200,26 @@
 
     .ForeCast{
         display: flex;
+        margin: auto;
     }
 
-    .Time{
-        color: #FFFFFF;
+    .Time{   
         display: flex;
     }
+
+    /* style="padding-right: 2em; padding-left: 1.3em" */
+
+
+    /* container of all time for the hour forecast */
+    .Time_Item{
+        color: #ffffff;
+        margin: auto;
+    }
+
+    
+
+    /*  */
+
 
     .Icon-WeatherForecast{
         padding-top: 0.5em;
@@ -215,14 +229,14 @@
     }
 
     .Temperature-WeatherForecast{
-        padding-right: 0.3em;
         color: #FFFFFF;
         display: flex;
     }
 
-    .Row1{
-        padding-left: 1em;
+    .Temperature-WeatherForecast-container{
+        margin: auto;
     }
+
     
     /* ---------------------------------------------------------------------- */
 
@@ -244,10 +258,18 @@
         display: flex;
     }
 
+
+
     .Weekly_Time{
         padding-right: 0.3em;
         color: #FFFFFF;
         display: flex;
+    }
+
+    /* Container for all weekday */
+
+    .Weekly_Time_container{
+        margin: auto;
     }
 
     .Weekly_Icon-WeatherForecast{
@@ -262,9 +284,9 @@
         display: flex;
     }
 
-    .Weekly_Row1{
+    /* .Weekly_Row1{
         gap: 0.3em;
-    }
+    } */
     .Weekly_Row2{
         gap:0.3em;
     }
