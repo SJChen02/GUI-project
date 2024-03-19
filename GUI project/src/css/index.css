@@ -203,9 +203,8 @@
     }
 
     .Time{
-        padding-right: 0.25em;
-        margin: auto;
         color: #FFFFFF;
+        display: flex;
     }
 
     .Icon-WeatherForecast{
@@ -217,12 +216,12 @@
 
     .Temperature-WeatherForecast{
         padding-right: 0.3em;
-        margin: auto;
         color: #FFFFFF;
+        display: flex;
     }
 
     .Row1{
-        gap: 0.3em;
+        padding-left: 1em;
     }
     
     /* ---------------------------------------------------------------------- */
@@ -247,8 +246,8 @@
 
     .Weekly_Time{
         padding-right: 0.3em;
-        margin: auto;
         color: #FFFFFF;
+        display: flex;
     }
 
     .Weekly_Icon-WeatherForecast{
@@ -259,8 +258,8 @@
     }
 
     .Weekly_Temperature-WeatherForecast{
-        margin: auto;
         color: #FFFFFF;
+        display: flex;
     }
 
     .Weekly_Row1{
@@ -439,16 +438,13 @@
     }
 
     .recommend{
-        font-size: 2.75em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        font-size: 2.2em;
         color: #61FF00;
         text-align: center;
     }
 
-    .b_umbrella{
-        padding-top: 0.5em;
-        font-size: 2em;
-        text-align: center;
-    }
     /* ---------------------------------------------------------------------- */
 
     /* template css. could delete, useless code */
