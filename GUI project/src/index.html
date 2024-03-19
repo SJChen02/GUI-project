@@ -48,14 +48,14 @@
 
             <div class = "Temperature-Middle">
                 <!-- <div>test</div> -->
-                <img class="weatherIcon" src="img/Cloud.png" alt="WeatherIcon-DefaultCloudy">
-                <div class="temperatureValue">19°</div>
+                <img class="weatherIcon" id="weatherIcon" src="#">
+                <div class="temperatureValue" id="todayDateTemp"></div>
             </div>
 
             <div class = "Weather Today">Today</div>
-            <div class = "Weather WeatherName">Cloudy</div>
+            <div class = "Weather WeatherName" id="weatherName"></div>
             <div class = "Weather T_Date">Today's Date</div>
-            <div class = "Weather Date">01 Jan 2024</div>
+            <div class = "Weather Date" id="todayDate"></div>
 
         </div>
 
@@ -65,7 +65,7 @@
         
         <!-- Box2, abt hourly forecast (title) -->
 
-        <div class = "Box_Title">Hourly Forecast</div>
+        <div class = "Box_Title">3-Hour Forecast</div>
 
         <!-- Box2 - Core code -->
         <div class = "Main_WeeklyForecast">
@@ -73,27 +73,21 @@
 
             <div class="ForeCast_FlexTable">
                 <div class = "ForeCast Row1">
-                    <div class="Time">Now</div>
-                    <div class="Time">12:00</div>
-                    <div class="Time">12:00</div>
-                    <div class="Time">12:00</div>
-                    <div class="Time">12:00</div>
+                    <div class="Time" style="padding-right: 1.5em">Now</div>
+                    <div class="Time" id="3hourTime"></div>
                 </div>
     
                 <div class = "ForeCast Row2">
-                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
-                    <img class="Icon-WeatherForecast" src="img/Sunny.png" alt="WeatherIcon">
-                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
-                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
-                    <img class="Icon-WeatherForecast" src="img/Raining.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" id="weatherHourIcon1" src="#">
+                    <img class="Icon-WeatherForecast" id="weatherHourIcon2" src="#">
+                    <img class="Icon-WeatherForecast" id="weatherHourIcon3" src="#">
+                    <img class="Icon-WeatherForecast" id="weatherHourIcon4" src="#">
+                    <img class="Icon-WeatherForecast" id="weatherHourIcon5" src="#">
                 </div>
     
-                <div class = "ForeCast Row3">
-                    <div class="Temperature-WeatherForecast">12°</div>
-                    <div class="Temperature-WeatherForecast">12°</div>
-                    <div class="Temperature-WeatherForecast">12°</div>
-                    <div class="Temperature-WeatherForecast">12°</div>
-                    <div class="Temperature-WeatherForecast">12°</div>
+                <div class = "ForeCast Row3" style="padding-left: 2em">
+                    <div class="Temperature-WeatherForecast" id="nowTemp"></div>
+                    <div class="Temperature-WeatherForecast" id="hourWeatherData"></div>
                 </div>
             </div>
             
@@ -114,27 +108,21 @@
 
             <div class="ForeCast_FlexTable">
                 <div class = "Weekly_ForeCast Weekly_Row1">
-                    <div class="Weekly_Time">Today</div>
-                    <div class="Weekly_Time">Sun</div>
-                    <div class="Weekly_Time">Mon</div>
-                    <div class="Weekly_Time">Tue</div>
-                    <div class="Weekly_Time">Wed</div>
+                    <div class="Weekly_Time" style="padding-left: 1.5em; padding-right: 1.5em">Today</div>
+                    <div class="Weekly_Time" id="weekDay"></div>
                 </div>
     
                 <div class = "Weekly_ForeCast Weekly_Row2">
-                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
-                    <img class="Weekly_Icon-WeatherForecast" src="img/Sunny.png" alt="WeatherIcon">
-                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
-                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
-                    <img class="Weekly_Icon-WeatherForecast" src="img/Raining.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon1" src="#">
+                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon2" src="#">
+                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon3" src="#">
+                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon4" src="#">
+                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon5" src="#">
                 </div>
     
                 <div class = "Weekly_ForeCast Weekly_Row3">
-                    <div class="Weekly_Temperature-WeatherForecast">12°/8°</div>
-                    <div class="Weekly_Temperature-WeatherForecast">12°/2°</div>
-                    <div class="Weekly_Temperature-WeatherForecast">20°/17°</div>
-                    <div class="Weekly_Temperature-WeatherForecast">19°/15°</div>
-                    <div class="Weekly_Temperature-WeatherForecast">19°/5°</div>
+                    <div class="Weekly_Temperature-WeatherForecast" id="tdyDiffTemp"></div>
+                    <div class="Weekly_Temperature-WeatherForecast" id="differentTemp"></div>
                 </div>
             </div>
             
@@ -189,12 +177,14 @@
             </div>
 
             <div class = "Reminder R_Today">Today</div>
-            <div class = "Reminder BringUmbrella">Bring Umbrella 16:30</div>
+            <div class = "Reminder BringUmbrella" id="umbrellaTdyCheck"></div>
             <div class = "Reminder R_Tomorrow">Tomorrow</div>
-            <div class = "Reminder recommend">Not recommend</div>
-            <div class = "Reminder b_umbrella">to bring Umbrella</div>
+            <div class = "Reminder recommend" id="umbrellaTmrCheck"></div>
 
         </div>
+
+        <script src="Weather.js"></script>
+        
 
     </div>
 
