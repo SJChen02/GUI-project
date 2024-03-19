@@ -63,7 +63,7 @@ async function getTodayInfo(){
     const info = json.main
     document.getElementById('todayDateTemp').innerHTML= `${Math.round(kToC(info.temp)) + "°"}`;
     // document.getElementById('nowTemp').innerHTML= `<div class="Temperature-WeatherForecast> ${Math.round(kToC(info.temp)) + "°"}</div>`;
-    document.getElementById('tdyDiffTemp').innerHTML = `<div class="Weekly_Time_container"> ${Math.ceil(kToC(info.temp_max)) + "°"}/${Math.floor(kToC(info.temp_min)) + "°"} </div>`;
+    document.getElementById('differentTemp').innerHTML = `<div class="Weekly_Time_container"> ${Math.ceil(kToC(info.temp_max)) + "°"}/${Math.floor(kToC(info.temp_min)) + "°"} </div>`;
 
     const date = new Date()
     let day = date.getDate();
