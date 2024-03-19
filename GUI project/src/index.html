@@ -72,11 +72,11 @@
 
 
             <div class="ForeCast_FlexTable">
-                <div class = "ForeCast Row1">
-                    <div class="Time" style="padding-right: 1.5em">Now</div>
-                    <div class="Time" id="3hourTime"></div>
-                </div>
+                
+                <!-- Row1 -->
+                <div class="Time" id="3hourTime"></div>
     
+                <!-- Row2 -->
                 <div class = "ForeCast Row2">
                     <img class="Icon-WeatherForecast" id="weatherHourIcon1" src="#">
                     <img class="Icon-WeatherForecast" id="weatherHourIcon2" src="#">
@@ -85,10 +85,8 @@
                     <img class="Icon-WeatherForecast" id="weatherHourIcon5" src="#">
                 </div>
     
-                <div class = "ForeCast Row3" style="padding-left: 2em">
-                    <div class="Temperature-WeatherForecast" id="nowTemp"></div>
-                    <div class="Temperature-WeatherForecast" id="hourWeatherData"></div>
-                </div>
+                <!-- Row3 -->
+                <div class="Temperature-WeatherForecast" id="hourWeatherData"></div>
             </div>
             
 
@@ -107,11 +105,10 @@
 
 
             <div class="ForeCast_FlexTable">
-                <div class = "Weekly_ForeCast Weekly_Row1">
-                    <div class="Weekly_Time" style="padding-left: 1.5em; padding-right: 1.5em">Today</div>
-                    <div class="Weekly_Time" id="weekDay"></div>
-                </div>
-    
+                <!-- Week Day, Row1 -->
+                <div class="Weekly_Time" id="weekDay"></div>
+
+                <!-- icons, Row2-->
                 <div class = "Weekly_ForeCast Weekly_Row2">
                     <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon1" src="#">
                     <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon2" src="#">
@@ -120,10 +117,10 @@
                     <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon5" src="#">
                 </div>
     
+                <!-- temp, Row3 -->
                 <div class = "Weekly_ForeCast Weekly_Row3">
-                    <div class="Weekly_Temperature-WeatherForecast" id="tdyDiffTemp"></div>
-                    <div class="Weekly_Temperature-WeatherForecast" id="differentTemp"></div>
                 </div>
+                <div class="Weekly_Temperature-WeatherForecast" id="differentTemp"></div>
             </div>
             
         </div>
