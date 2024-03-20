@@ -13,12 +13,22 @@
     }
     
     /* Special title for each box */
-
     .Box_Title{
         padding-left: 1em;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
         font-weight: bold;
+    }
+
+
+    @media only screen and (min-width: 600px) {
+        .Box_Title{
+            padding-left: 1em;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            font-size: 2.5vw;
+        }
 
     }
 
@@ -136,7 +146,7 @@
     /* Weather & temp , Middle*/
 
     .Temperature-Middle{
-        padding-top: 2.5%;
+        padding-top: 1em;
         align-self: center;
         color: #CAD7DF;
         display: flex;
@@ -151,6 +161,17 @@
     .temperatureValue{
         font-size: 4em;
         
+    }
+
+    @media only screen and (min-width: 800px) {
+        .weatherIcon{
+            width: 10vw;
+            height: 8vw;
+        }
+        .temperatureValue{
+            font-size: 8vw;
+            
+        }
     }
 
 
@@ -310,6 +331,7 @@
         display: flex;
         flex-direction: column;
     }
+    
 
     /* Location name , Top */
 
@@ -401,7 +423,6 @@
         display: flex;
         flex-direction: column;
 
-        margin-bottom: 1em;
     }
 
     /* Location name , Top */
@@ -469,14 +490,105 @@
 
     /* ---------------------------------------------------------------------- */
 
-    /* template css. could delete, useless code */
-    .item{
+    /* Box 6 - Calendar */
+
+    .Main_Calendar {
         height: 100%;
         padding: 1em;
-        margin: 1em;
-        border: 10px solid;
+        margin-left: 1em;
+        margin-right: 1em;
+        border: 1px solid #456BB4;
         border-radius: 10px;
+        background-color: rgb(69,107,180,0.61);
+        color: black;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2em;
+        text-align: center;
     }
-    
 
+    .CalendarIcon{
+        text-align: center;
+        align-self: center;
+        width: 10px;
+        margin: auto;
+    }
+
+    /* ---------------------------------------------------------------------- */
+
+    /* Box 6 - Calendar */
+
+    .Main_Calendar {
+        height: 100%;
+        padding: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        border: 1px solid #456BB4;
+        border-radius: 10px;
+        background-color: rgb(69,107,180,0.61);
+        color: black;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .CalendarIcon{
+        text-align: center;
+        align-self: center;
+        width: 50%;
+    }
+
+
+    /* ---------------------------------------------------------------------- */
+
+    /* Box 7 - Calendar */
+
+    .Main_WeatherDetails {
+        height: 100%;
+        padding: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        border: 1px solid #456BB4;
+        border-radius: 10px;
+        background-color: rgb(69,107,180,0.61);
+        color: black;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2em;
+        flex-direction: column;
+    }
+
+    .rows{
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        
+    }
+
+    .boxes{
+        border: 1px solid #456BB4;
+        border-radius: 10px;
+        color: black;
+        background-color: rgb(69,107,180,0.61);
+        display: flex;
+        flex-direction: column;
+        
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        width: 100%;
+        height: 6em;
+        font-size: 5vw;
+    }
+
+    .Text-top{
+        margin-top: auto;
+        align-self: center;
+        width: 5vw;
+    }
+
+    .Text-bot{
+        margin-bottom: auto;
+    }
 }
