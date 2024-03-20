@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/Setting.css" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="Weather.js"></script>
+    <link id="theme" href="css/Setting.css" rel="stylesheet" type="text/css" />
     <title>Document</title>
-</head>
+  </head>
 
-
-<body>
-
+  <body>
     <div class="MainMenu">
-
-
-            <!-- Back to Main menu -->
-            <div class="MainMenuButton">
-                <form action="index.html" class="BackButton">
-                    <button type="submit">
-    
-                        <div class= "BackToMainMenuButton">
-                            <img src="img/BackArrow.png" alt="BackToMainMenu">
-                            <p class="BackToMainMenuTitle">Main Menu</p>
-                        </div>
-                        
-                    </button>
-                </form>
+      <!-- Back to Main menu -->
+      <div class="MainMenuButton">
+        <form action="index.html" class="BackButton">
+          <button type="submit">
+            <div class="BackToMainMenuButton">
+              <img src="img/BackArrow.png" alt="BackToMainMenu" />
+              <p class="BackToMainMenuTitle">Main Menu</p>
             </div>
+          </button>
+        </form>
+      </div>
 
+      <!-- Units (title) -->
 
+      <div class="Box_Title">Units</div>
 
+      <!-- Box1, abt weather/temperature -->
 
-        <!-- Units (title) -->
-
-        <div class = "Box_Title">Units</div>
-
-        <!-- Box1, abt weather/temperature -->
-
-        <div class = "Main_Unit">
-            
-            <div class = "TemperatureUnit">
-                <div class = "Temperature">Temperature</div>
-                <img class="C_F" src="img/C -_ F.png" alt="C->F symbol">
-            </div>
-
-            <div class = "UnitContainer">
-                <div class = "Unit">
-                    <div class = "X_title">Wind</div>
-                    <div class = "X_units">Miles per hour (mph)</div>
-                </div>
-                <img class="arrow" src="img/Arrow.png" alt="arrow symbol">
-            </div>
-
-
-            <div class = "UnitContainer">
-                <div class = "Unit">
-                    <div class = "X_title">Air Pressure</div>
-                    <div class = "X_units">Hectopascals (hPa)</div>
-                </div>
-                <img class="arrow" src="img/Arrow.png" alt="arrow symbol">
-            </div>
-
-            
-            <div class = "UnitContainer">
-                <div class = "Unit">
-                    <div class = "X_title">Visibility</div>
-                    <div class = "X_units">Kilometres (km)</div>
-                </div>
-                <img class="arrow" src="img/Arrow.png" alt="arrow symbol">
-            </div>
-
-            
-
+      <div class="Main_Unit">
+        <div class="TemperatureUnit">
+          <div class="Temperature">Temperature</div>
+          <img class="C_F" src="img/C -_ F.png" alt="C->F symbol" />
         </div>
 
-    </div>
+        <div class="UnitContainer">
+          <div class="Unit">
+            <div class="X_title">Wind</div>
+            <div class="X_units">Miles per hour (mph)</div>
+          </div>
+          <img class="arrow" src="img/Arrow.png" alt="arrow symbol" />
+        </div>
 
-</body>
+        <div class="UnitContainer">
+          <div class="Unit">
+            <div class="X_title">Air Pressure</div>
+            <div class="X_units">Hectopascals (hPa)</div>
+          </div>
+          <img class="arrow" src="img/Arrow.png" alt="arrow symbol" />
+        </div>
+
+        <div class="UnitContainer">
+          <div class="Unit">
+            <div class="X_title">Visibility</div>
+            <div class="X_units">Kilometres (km)</div>
+          </div>
+          <img class="arrow" src="img/Arrow.png" alt="arrow symbol" />
+        </div>
+
+        <!-- Colour Scheme Button -->
+        <div class="themeButtons">
+          <button
+            id="darkMode"
+            class="button darkMode"
+            onclick="checkTheme('darkMode')"
+          >
+            Dark Mode
+          </button>
+          <button
+            id="qmColours"
+            class="button QMColours"
+            onclick="checkTheme('qmColours')"
+          >
+            QM Colour Scheme
+          </button>
+          <button id="default" class="button" onclick="checkTheme('default')">
+            Default Colour Scheme
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
