@@ -1,5 +1,5 @@
-async function getInfo(){
-    const res = await fetch('http://api.openweathermap.org/data/2.5/forecast?lat=51.5073219&lon=-0.1276474&appid=b3e79ab765ac55b063567e2787d48609')
+async function getInfo(nlat,nlon){
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${nlat}&lon=${nlon}&appid=b3e79ab765ac55b063567e2787d48609`)
     const json = await res.json()
     console.log(json)
 
@@ -53,10 +53,10 @@ async function getInfo(){
     document.getElementById('umbrellaTmrCheck').innerHTML= `${checkBringUmbrella(info[8])}`
 }
 
-getInfo();
+getInfo(51.5073, -0.1276);
 
-async function getTodayInfo(){
-    const res = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=51.5073219&lon=-0.1276474&appid=b3e79ab765ac55b063567e2787d48609')
+async function getTodayInfo(nlat,nlon){
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${nlat}&lon=${nlon}&appid=b3e79ab765ac55b063567e2787d48609`)
     const json = await res.json()
     console.log(json)
 
@@ -73,10 +73,11 @@ async function getTodayInfo(){
     document.getElementById('weatherName').innerHTML= `${checkTypeNameOfWeather(json)}`;
     document.getElementById('weatherIcon').src = `${checkTypeIconOfWeather(json)}`;
 
-    document.getElementById('umbrellaTdyCheck').innerHTML= `${checkBringUmbrella(json)}`
+    document.getElementById('umbrellaTdyCheck').innerHTML= `${checkBringUmbrella(json)}`;
+    document.getElementById('weatherLocation').innerHTML= `${weatherLocation(json)}`;
 }
 
-getTodayInfo();
+getTodayInfo(51.5073, -0.1276);
 
 function kToC(k){
     return k-273.15
@@ -90,6 +91,9 @@ function checkTypeNameOfWeather(tdy){
     else if(typeOfWeather==="Rain"){
         return "Rain"
     }
+    else if(typeOfWeather==="Smoke"){
+        return "Smoke"
+    }
     else if(typeOfWeather==="Clear"){
         return "Sunny"
     }
@@ -98,6 +102,9 @@ function checkTypeNameOfWeather(tdy){
 function checkTypeIconOfWeather(tdy){
     const typeOfWeather = tdy.weather[0].main
     if(typeOfWeather==="Clouds"){
+        return "img/Cloud.png";
+    }
+    else if(typeOfWeather==="Smoke"){
         return "img/Cloud.png";
     }
     else if(typeOfWeather==="Rain"){
@@ -114,5 +121,85 @@ function checkBringUmbrella(data){
     }
     else{
         return "Not recommend to bring Umbrella"
+    }
+}
+
+async function getInfo2(sta){
+    const res = await fetch('https://api.tfl.gov.uk/line/mode/tube/status')
+    const json = await res.json()
+    console.log(json)
+
+    document.getElementById('tubeStatus').innerHTML= json[sta].lineStatuses[0].statusSeverityDescription //first 0 depend on the line name
+    document.getElementById('trianName').innerHTML= `${trianLineName(json[sta])}`;
+}
+
+getInfo2(7);
+
+
+async function getInfo3(loc){
+    const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=1&appid=b3e79ab765ac55b063567e2787d48609`)
+    const json = await res.json()
+    console.log(json)
+
+    getInfo(json[0].lat, json[0].lon);
+    getTodayInfo(json[0].lat, json[0].lon);
+}
+
+getInfo3(`London`);
+
+
+function weatherLocation(tn){
+    const locat = tn.name
+    if(locat === "London"){
+        return "London";
+    }
+    else if(locat === "Durham"){
+        return "Durham";
+    }
+    if(locat === "Manchester"){
+        return "Manchester";
+    }
+    else if(locat === "Birmingham"){
+        return "Birmingham";
+    }
+    else{
+        return "London , Miles End";
+    }
+}
+
+function trianLineName(tn){
+    const diffName = tn.name
+    if(diffName==="Bakerloo"){
+        return "Bakerloo Line";
+    }
+    else if(diffName==="Central"){
+        return "Central Line";
+    }
+    else if(diffName==="Circle"){
+        return "Circle Line";
+    }
+    else if(diffName==="District"){
+        return "District Line";
+    }
+    else if(diffName==="Hammersmith & City"){
+        return "Hammersmith & City Line";
+    }
+    else if(diffName==="Jubilee"){
+        return "Jubilee Line";
+    }
+    else if(diffName==="Metropolitan"){
+        return "Metropolitan Line";
+    }
+    else if(diffName==="Piccadilly"){
+        return "Piccadilly Line";
+    }
+    else if(diffName==="Waterloo & City"){
+        return "Waterloo & City Line";
+    }
+    else if(diffName==="Victoria"){
+        return "Victoria Line";
+    }
+    else{
+        return "Northern Line";
     }
 }

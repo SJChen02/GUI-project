@@ -48,14 +48,14 @@
 
             <div class = "Temperature-Middle">
                 <!-- <div>test</div> -->
-                <img class="weatherIcon" id="weatherIcon" src="#">
-                <div class="temperatureValue" id="todayDateTemp"></div>
+                <img class="weatherIcon" src="img/Cloud.png" alt="WeatherIcon-DefaultCloudy">
+                <div class="temperatureValue">19°</div>
             </div>
 
             <div class = "Weather Today">Today</div>
-            <div class = "Weather WeatherName" id="weatherName"></div>
+            <div class = "Weather WeatherName">Cloudy</div>
             <div class = "Weather T_Date">Today's Date</div>
-            <div class = "Weather Date" id="todayDate"></div>
+            <div class = "Weather Date">01 Jan 2024</div>
 
         </div>
 
@@ -65,28 +65,36 @@
         
         <!-- Box2, abt hourly forecast (title) -->
 
-        <div class = "Box_Title">3-Hour Forecast</div>
+        <div class = "Box_Title">Hourly Forecast</div>
 
         <!-- Box2 - Core code -->
         <div class = "Main_WeeklyForecast">
 
 
             <div class="ForeCast_FlexTable">
-                
-                <!-- Row1 -->
-                <div class="Time" id="3hourTime"></div>
-    
-                <!-- Row2 -->
-                <div class = "ForeCast Row2">
-                    <img class="Icon-WeatherForecast" id="weatherHourIcon1" src="#">
-                    <img class="Icon-WeatherForecast" id="weatherHourIcon2" src="#">
-                    <img class="Icon-WeatherForecast" id="weatherHourIcon3" src="#">
-                    <img class="Icon-WeatherForecast" id="weatherHourIcon4" src="#">
-                    <img class="Icon-WeatherForecast" id="weatherHourIcon5" src="#">
+                <div class = "ForeCast Row1">
+                    <div class="Time">Now</div>
+                    <div class="Time">12:00</div>
+                    <div class="Time">12:00</div>
+                    <div class="Time">12:00</div>
+                    <div class="Time">12:00</div>
                 </div>
     
-                <!-- Row3 -->
-                <div class="Temperature-WeatherForecast" id="hourWeatherData"></div>
+                <div class = "ForeCast Row2">
+                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" src="img/Sunny.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" src="img/Raining.png" alt="WeatherIcon">
+                </div>
+    
+                <div class = "ForeCast Row3">
+                    <div class="Temperature-WeatherForecast">12°</div>
+                    <div class="Temperature-WeatherForecast">12°</div>
+                    <div class="Temperature-WeatherForecast">12°</div>
+                    <div class="Temperature-WeatherForecast">12°</div>
+                    <div class="Temperature-WeatherForecast">12°</div>
+                </div>
             </div>
             
 
@@ -105,22 +113,29 @@
 
 
             <div class="ForeCast_FlexTable">
-                <!-- Week Day, Row1 -->
-                <div class="Weekly_Time" id="weekDay"></div>
-
-                <!-- icons, Row2-->
-                <div class = "Weekly_ForeCast Weekly_Row2">
-                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon1" src="#">
-                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon2" src="#">
-                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon3" src="#">
-                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon4" src="#">
-                    <img class="Weekly_Icon-WeatherForecast" id="weatherWeekIcon5" src="#">
+                <div class = "Weekly_ForeCast Weekly_Row1">
+                    <div class="Weekly_Time">Today</div>
+                    <div class="Weekly_Time">Sun</div>
+                    <div class="Weekly_Time">Mon</div>
+                    <div class="Weekly_Time">Tue</div>
+                    <div class="Weekly_Time">Wed</div>
                 </div>
     
-                <!-- temp, Row3 -->
-                <div class = "Weekly_ForeCast Weekly_Row3">
+                <div class = "Weekly_ForeCast Weekly_Row2">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Sunny.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Raining.png" alt="WeatherIcon">
                 </div>
-                <div class="Weekly_Temperature-WeatherForecast" id="differentTemp"></div>
+    
+                <div class = "Weekly_ForeCast Weekly_Row3">
+                    <div class="Weekly_Temperature-WeatherForecast">12°/8°</div>
+                    <div class="Weekly_Temperature-WeatherForecast">12°/2°</div>
+                    <div class="Weekly_Temperature-WeatherForecast">20°/17°</div>
+                    <div class="Weekly_Temperature-WeatherForecast">19°/15°</div>
+                    <div class="Weekly_Temperature-WeatherForecast">19°/5°</div>
+                </div>
             </div>
             
         </div>
@@ -174,118 +189,13 @@
             </div>
 
             <div class = "Reminder R_Today">Today</div>
-            <div class = "Reminder BringUmbrella" id="umbrellaTdyCheck"></div>
+            <div class = "Reminder BringUmbrella">Bring Umbrella 16:30</div>
             <div class = "Reminder R_Tomorrow">Tomorrow</div>
-            <div class = "Reminder recommend" id="umbrellaTmrCheck"></div>
+            <div class = "Reminder recommend">Not recommend</div>
+            <div class = "Reminder b_umbrella">to bring Umbrella</div>
 
         </div>
 
-
-
-        
-        <!-- Box6, abt Calendar (title) -->  
-
-        <div class = "Box_Title">Calendar</div>  
-
-        <!-- Box6, Core code -->  
-
-        <div class = "Main_Calendar">
-
-            <!-- placeholder for calendar -->
-            <form action="Reminder.html" >
-                <button class = "Button"> <img class=CalendarIcon src="img/UmbrellaIcon.png" alt="Calendar"></button>
-            </form>
-           
-
-        </div>
-
-
-
-
-
-        <!-- Box7, abt Weather Detail (title) -->  
-
-        <div class = "Box_Title">Weather details</div>  
-
-        <!-- Box7, Core code -->  
-
-        <div class = "Main_WeatherDetails">
-            
-            <div class="rows">
-                <div class = "boxes">
-                    <img class="Text-top" src="img/TempSymbol.png" alt="therometer">
-                    <div>Feels like</div>
-                    <div class="Text-bot">19°</div>
-                </div>
-
-                <div class = "boxes">
-                    <img class="Text-top" src="" alt="">pic placeholder</img>
-                    <div>Humidity</div>
-                    <div class="Text-bot">91%</div>
-                </div>
-
-            </div>
-
-            <div class="rows">
-                
-                <div class = "boxes">
-                    <img class="Text-top" src="" alt="">pic placeholder</img>
-                    <div>Wind Direction</div>
-                    <div class="Text-bot">SSW</div>
-                </div>
-
-                <div class = "boxes">
-                    <img class="Text-top" src="" alt="">pic placeholder</img>
-                    <div>Wind Speed</div>
-                    <div class="Text-bot">4mi/h</div>
-                </div>
-            </div>
-
-            <div class="rows">
-                
-                <div class = "boxes">
-                    <img class="Text-top" src="" alt="">pic placeholder</img>
-                    <div>Air Pressure</div>
-                    <div class="Text-bot">1000hpa</div>
-                </div>
-
-                <div class = "boxes">
-                    <img class="Text-top" src="" alt="">pic placeholder</img>
-                    <div>Visibility</div>
-                    <div class="Text-bot">16km</div>
-                </div>
-            </div>
-
-            <div class="rows">
-                
-                <div class = "boxes">
-                    <img class="Text-top" src="" alt="">pic placeholder</img>
-                    <div>UV</div>
-                    <div class="Text-bot">10 Very weak</div>
-                </div>
-
-                <div class = "boxes">
-                    <img class="Text-top" src="" alt="">pic placeholder</img>
-                    <div>Sunset</div>
-                    <div class="Text-bot">17:50</div>
-                </div>
-            </div>
-
-        </div>
-
-
-<!----------------------------------END OF HTML  ----------------------------------------->
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-        <!-- javascript -->
-
-        <script src="Weather.js"></script>
-        
 
     </div>
 
