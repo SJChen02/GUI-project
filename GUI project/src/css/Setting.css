@@ -82,7 +82,8 @@
     }
 
     .BackToMainMenuTitle{
-        font-size: 150%;
+        font-weight: bold;
+        font-size: 200%;
         margin: 0;
         padding: 0;
         padding-left: 0.3em;
