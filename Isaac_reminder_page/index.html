@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <div class="MainMenu">
+
+
+            <!-- Setting -->
+            <form action="Setting.html" class="setting">
+                <button type="submit" ><img src="img/3 line (Setting).png" alt="Setting"></button>
+            </form>
+       
+
+            <!-- SearchBar -->
+
+            <form action="" class="search-bar-background">
+                <input type="text" placeholder="Search..." list="options">
+                <datalist id="options">
+                    <option value="Hourly Forecast">Hourly Forecast</option>
+                    <option value="Weekly Forecast">Weekly Forecast</option>
+                    <option value="Train Delay">Train Delay</option>
+                    <option value="Umbrella Reminder">Umbrella Reminder</option>
+                    <option value="Weekly Forecast">Weekly Forecast</option>
+                </datalist>
+
+                <button type="submit"><img src="img/Magnifyingglass.png" alt="SearchButton"></button>
+                <!-- <button type="submit"><img src="img/Arrow.png" alt="cancelButton"></button> -->
+            </form>
+    
+
+
+        <!-- Box1, abt weather/temperature -->
+
+        <div class = "Main_Temp_weather">
+            
+            <div class = "Location-Top">
+                <div class = "Location">London , Miles End</div>
+                <img class="arrow" src="img/Arrow.png" alt="Temperature/weather-arrow">
+            </div>
+
+            <div class = "Temperature-Middle">
+                <!-- <div>test</div> -->
+                <img class="weatherIcon" src="img/Cloud.png" alt="WeatherIcon-DefaultCloudy">
+                <div class="temperatureValue">19°</div>
+            </div>
+
+            <div class = "Weather Today">Today</div>
+            <div class = "Weather WeatherName">Cloudy</div>
+            <div class = "Weather T_Date">Today's Date</div>
+            <div class = "Weather Date">01 Jan 2024</div>
+
+        </div>
+
+
+
+
+        
+        <!-- Box2, abt hourly forecast (title) -->
+
+        <div class = "Box_Title">Hourly Forecast</div>
+
+        <!-- Box2 - Core code -->
+        <div class = "Main_WeeklyForecast">
+
+
+            <div class="ForeCast_FlexTable">
+                <div class = "ForeCast Row1">
+                    <div class="Time">Now</div>
+                    <div class="Time">12:00</div>
+                    <div class="Time">12:00</div>
+                    <div class="Time">12:00</div>
+                    <div class="Time">12:00</div>
+                </div>
+    
+                <div class = "ForeCast Row2">
+                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" src="img/Sunny.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Icon-WeatherForecast" src="img/Raining.png" alt="WeatherIcon">
+                </div>
+    
+                <div class = "ForeCast Row3">
+                    <div class="Temperature-WeatherForecast">12°</div>
+                    <div class="Temperature-WeatherForecast">12°</div>
+                    <div class="Temperature-WeatherForecast">12°</div>
+                    <div class="Temperature-WeatherForecast">12°</div>
+                    <div class="Temperature-WeatherForecast">12°</div>
+                </div>
+            </div>
+            
+
+        </div>
+
+
+
+
+        <!-- Box3, abt weekly forecast (title) -->  
+        
+        <div class = "Box_Title">Weekly Forecast</div>
+
+        <!-- Box3 - Core code -->
+
+        <div class = "Main_WeeklyForecast">
+
+
+            <div class="ForeCast_FlexTable">
+                <div class = "Weekly_ForeCast Weekly_Row1">
+                    <div class="Weekly_Time">Today</div>
+                    <div class="Weekly_Time">Sun</div>
+                    <div class="Weekly_Time">Mon</div>
+                    <div class="Weekly_Time">Tue</div>
+                    <div class="Weekly_Time">Wed</div>
+                </div>
+    
+                <div class = "Weekly_ForeCast Weekly_Row2">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Sunny.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Cloud.png" alt="WeatherIcon">
+                    <img class="Weekly_Icon-WeatherForecast" src="img/Raining.png" alt="WeatherIcon">
+                </div>
+    
+                <div class = "Weekly_ForeCast Weekly_Row3">
+                    <div class="Weekly_Temperature-WeatherForecast">12°/8°</div>
+                    <div class="Weekly_Temperature-WeatherForecast">12°/2°</div>
+                    <div class="Weekly_Temperature-WeatherForecast">20°/17°</div>
+                    <div class="Weekly_Temperature-WeatherForecast">19°/15°</div>
+                    <div class="Weekly_Temperature-WeatherForecast">19°/5°</div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+
+        <!-- Box4, abt train delay (title) -->  
+
+        <div class = "Box_Title">Train Delay</div>  
+
+        <!-- Box4, Core code -->  
+
+        <div class = "Main_Train_Delay">
+            
+            <div class = "TrainLine-Top">
+                <div class = "TrainLine">Northern Line</div>
+                <img class="Train_delay_arrow" src="img/Arrow.png" alt="TrainDelay-arrow">
+            </div>
+
+            <div class = "Delay-Middle">
+                <!-- <div>test</div> -->
+                <img class="TFL_icon" src="img/TFL icon.png" alt="TFL-Icon">
+                <div class="Strike">No Strike</div>
+            </div>
+
+            <div class = "Delay Currently">Currently</div>
+            <div class = "Delay TypeOfDelay">Minor Delay</div>
+            <div class = "Delay Nxt_Stike_Date">Next Possible Strike date</div>
+            <div class = "Delay Strike_Date">None</div>
+
+        </div>
+        
+
+
+
+        <!-- Box5, abt umbrella reminder (title) -->  
+
+        <div class = "Box_Title">Umbrella Reminder</div>  
+
+        <!-- Box5, Core code -->  
+
+        <div class = "Main_UmbrellaReminder">
+            
+            <div class = "Umbrella-Top">
+                <div class = "Reminder-title">Reminder</div>
+            </div>
+
+            <div class = "Rem_Today-Middle">
+                <img class=UmbrellaIcon src="img/UmbrellaIcon.png" alt="Umbrella">
+            </div>
+
+            <div class = "Reminder R_Today">Today</div>
+            <div class = "Reminder BringUmbrella">Bring Umbrella 16:30</div>
+            <div class = "Reminder R_Tomorrow">Tomorrow</div>
+            <div class = "Reminder recommend">Not recommend</div>
+            <div class = "Reminder b_umbrella">to bring Umbrella</div>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>
