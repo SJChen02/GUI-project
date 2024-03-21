@@ -13,12 +13,22 @@
     }
     
     /* Special title for each box */
-
     .Box_Title{
         padding-left: 1em;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
         font-weight: bold;
+    }
+
+
+    @media only screen and (min-width: 600px) {
+        .Box_Title{
+            padding-left: 1em;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            font-size: 2.5vw;
+        }
 
     }
 
@@ -129,14 +139,43 @@
 
     .arrow{
         height: 0.75em;
-        padding-top: 0.75em;
-        padding-left: 0.75em;
+        padding-top: 4.5vw;
     }
+
+    @media only screen and (min-width: 500px) {
+        .arrow{
+            height: 0.75em;
+            padding-top: 3.5vw;
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+        .arrow{
+            height: 0.75em;
+            padding-top: 2.5vw;
+        }
+    }
+
+    @media only screen and (min-width: 900px) {
+        .arrow{
+            height: 0.75em;
+            padding-top: 2vw;
+        }
+    }
+
+    @media only screen and (min-width: 1100px) {
+        .arrow{
+            height: 0.75em;
+            padding-top: 0;
+            margin-top: 1.5vw;
+        }
+    }
+
 
     /* Weather & temp , Middle*/
 
     .Temperature-Middle{
-        padding-top: 2.5%;
+        padding-top: 1em;
         align-self: center;
         color: #CAD7DF;
         display: flex;
@@ -147,10 +186,22 @@
     .weatherIcon{
         width: 5em;
         height: 4em;
+        margin: auto;
     }
     .temperatureValue{
         font-size: 4em;
         
+    }
+
+    @media only screen and (min-width: 800px) {
+        .weatherIcon{
+            width: 10vw;
+            height: 8vw;
+        }
+        .temperatureValue{
+            font-size: 8vw;
+            
+        }
     }
 
 
@@ -200,12 +251,26 @@
 
     .ForeCast{
         display: flex;
+        margin: auto;
     }
 
-    .Time{
-        color: #FFFFFF;
+    .Time{   
         display: flex;
     }
+
+    /* style="padding-right: 2em; padding-left: 1.3em" */
+
+
+    /* container of all time for the hour forecast */
+    .Time_Item{
+        color: #ffffff;
+        margin: auto;
+    }
+
+    
+
+    /*  */
+
 
     .Icon-WeatherForecast{
         padding-top: 0.5em;
@@ -215,14 +280,14 @@
     }
 
     .Temperature-WeatherForecast{
-        padding-right: 0.3em;
         color: #FFFFFF;
         display: flex;
     }
 
-    .Row1{
-        padding-left: 1em;
+    .Temperature-WeatherForecast-container{
+        margin: auto;
     }
+
     
     /* ---------------------------------------------------------------------- */
 
@@ -244,10 +309,18 @@
         display: flex;
     }
 
+
+
     .Weekly_Time{
         padding-right: 0.3em;
         color: #FFFFFF;
         display: flex;
+    }
+
+    /* Container for all weekday */
+
+    .Weekly_Time_container{
+        margin: auto;
     }
 
     .Weekly_Icon-WeatherForecast{
@@ -262,9 +335,9 @@
         display: flex;
     }
 
-    .Weekly_Row1{
+    /* .Weekly_Row1{
         gap: 0.3em;
-    }
+    } */
     .Weekly_Row2{
         gap:0.3em;
     }
@@ -288,6 +361,7 @@
         display: flex;
         flex-direction: column;
     }
+    
 
     /* Location name , Top */
 
@@ -305,10 +379,39 @@
 
     .Train_delay_arrow{
         height: 0.75em;
-        padding-top: 1.25em;
-        padding-left: 0.75em;
-
+        padding-top: 7vw;
     }
+
+    @media only screen and (min-width: 500px) {
+        .Train_delay_arrow{
+            height: 0.75em;
+            padding-top: 5vw;
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+        .Train_delay_arrow{
+            height: 0.75em;
+            padding-top: 3.5vw;
+        }
+    }
+
+    @media only screen and (min-width: 900px) {
+        .Train_delay_arrow{
+            height: 0.75em;
+            padding-top: 3vw;
+        }
+    }
+
+    @media only screen and (min-width: 1100px) {
+        .Train_delay_arrow{
+            height: 0.75em;
+            padding-top: 0;
+            margin-top: 2vw;
+        }
+    }
+
+
     /* Weather & temp , Middle*/
 
     .Delay-Middle{
@@ -379,7 +482,6 @@
         display: flex;
         flex-direction: column;
 
-        margin-bottom: 1em;
     }
 
     /* Location name , Top */
@@ -447,14 +549,135 @@
 
     /* ---------------------------------------------------------------------- */
 
-    /* template css. could delete, useless code */
-    .item{
+    /* Box 6 - Calendar */
+
+    .Main_Calendar {
         height: 100%;
         padding: 1em;
-        margin: 1em;
-        border: 10px solid;
+        margin-left: 1em;
+        margin-right: 1em;
+        border: 1px solid #456BB4;
         border-radius: 10px;
+        background-color: rgb(69,107,180,0.61);
+        color: black;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2em;
+        text-align: center;
+    }
+
+    .CalendarIcon{
+        text-align: center;
+        align-self: center;
+        width: 10px;
+        margin: auto;
+    }
+
+    /* ---------------------------------------------------------------------- */
+
+    /* Box 6 - Calendar */
+
+    .Main_Calendar {
+        height: 100%;
+        padding: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        border: 1px solid #456BB4;
+        border-radius: 10px;
+        background-color: rgb(69,107,180,0.61);
+        color: black;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .CalendarIcon{
+        text-align: center;
+        align-self: center;
+        width: 50%;
+    }
+
+
+    /* ---------------------------------------------------------------------- */
+
+    /* Box 7 - Calendar */
+
+    .Main_WeatherDetails {
+        height: 100%;
+        padding: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        border: 1px solid #456BB4;
+        border-radius: 10px;
+        background-color: rgb(69,107,180,0.61);
+        color: black;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2em;
+        flex-direction: column;
+    }
+
+    .rows{
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        
+    }
+
+    .boxes{
+        border: 1px solid #456BB4;
+        border-radius: 10px;
+        color: black;
+        background-color: rgb(69,107,180,0.61);
+        display: flex;
+        flex-direction: column;
+        
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        width: 100%;
+        height: 6em;
+        font-size: 5vw;
+    }
+
+    .Text-top{
+        margin-top: auto;
+        align-self: center;
+        width: 5vw;
+    }
+
+    .Text-bot{
+        margin-bottom: auto;
+    }
+
+    @media only screen and (min-width: 800px) {
+    
+        .boxes{
+            border: 1px solid #456BB4;
+            border-radius: 10px;
+            color: black;
+            background-color: rgb(69,107,180,0.61);
+            display: flex;
+            flex-direction: column;
+            
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            width: 100%;
+            height: 6em;
+            font-size: 3vw;
+        }
+    
+        .Text-top{
+            margin-top: auto;
+            align-self: center;
+            width: 3vw;
+        }
+
+        
     }
     
-
 }
