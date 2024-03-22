@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/Setting.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="MainMenu">
+      <!-- Back to Main menu -->
+      <div class="MainMenuButton">
+        <form action="index.html" class="BackButton">
+          <button type="submit">
+            <div class="BackToMainMenuButton">
+              <img src="img/BackArrow.png" alt="BackToMainMenu" />
+              <p class="BackToMainMenuTitle">Main Menu</p>
+            </div>
+          </button>
+        </form>
+      </div>
+
+      <!-- Units (title) -->
+
+      <div class="Box_Title">Units</div>
+
+      <!-- Box1, abt weather/temperature -->
+
+      <div class="Main_Unit">
+        <div class="UnitContainer">
+          <div class="Unit">
+            <div class="X_title">Temperature</div>
+          </div>
+
+          <select class="X_units" name="TemperatureUnit">
+            <option style="display: none">Choose Temperature Unit</option>
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+          </select>
+        </div>
+
+        <div class="UnitContainer">
+          <div class="Unit">
+            <div class="X_title">Wind Speed</div>
+          </div>
+
+          <select class="X_units" name="WindSpeedUnit">
+            <option style="display: none">Choose Wind Speed Unit</option>
+            <option value="km/h">Kilometres per hour(km/h)</option>
+            <option value="m/s">Metres per second(m/s)</option>
+            <option value="ft/s">Feet per second(ft/s)</option>
+            <option value="mph">Miles Per Hour(mph)</option>
+            <option value="knots">Nautical miles per hour(knots)</option>
+            <option value="BeaufortScale">Beaufort Scale</option>
+          </select>
+        </div>
+
+        <div class="UnitContainer">
+          <div class="Unit">
+            <div class="X_title">Air Pressure</div>
+          </div>
+
+          <select class="X_units" name="PressureUnit">
+            <option style="display: none">Choose Air Pressure Unit</option>
+            <option value="hPa">Hectopascals (hPa)</option>
+            <option value="mmHg">Millimetres of mercury (mmHg)</option>
+            <option value="inHg">Inches of mercury (inHg)</option>
+          </select>
+        </div>
+
+        <div class="UnitContainer">
+          <div class="Unit">
+            <div class="X_title">Visibility</div>
+          </div>
+
+          <select class="X_units" name="VisibilityUnit">
+            <option style="display: none">Choose Visibility Unit</option>
+            <option value="mi">Miles (mi)</option>
+            <option value="km">Kilometres (km)</option>
+          </select>
+        </div>
+
+        <!-- Colour Scheme Button -->
+        <div class="themeButtons">
+          <button
+            id="darkMode"
+            class="button darkMode"
+            onclick="checkTheme('darkMode')"
+          >
+            Dark Mode
+          </button>
+          <button
+            id="qmColours"
+            class="button QMColours"
+            onclick="checkTheme('qmColours')"
+          >
+            QM Colour Scheme
+          </button>
+          <button id="default" class="button" onclick="checkTheme('default')">
+            Default Colour Scheme
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
