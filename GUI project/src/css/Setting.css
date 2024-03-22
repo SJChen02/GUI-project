@@ -19,19 +19,7 @@
         margin-top: 1em;
         margin-bottom: 0.5em;
         font-weight: bold;
-        font-size: 4vh;
-    }
-
-    @media only screen and (max-width: 200px) {
-
-        .Box_Title{
-            padding-left: 1em;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-            font-weight: bold;
-            font-size: 3vh;
-        }
-    
+        font-size: 4vw;
     }
 
 
@@ -59,7 +47,7 @@
 
     .BackButton{
         display: flex;
-        margin: 1em;
+        margin: 3vw;
     }
 
     .BackButton button{
@@ -73,7 +61,10 @@
     .BackButton img{
         align-items: center;
         text-align: center;
-        width: 30px;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 5vw;
+        height: 5vw;
     }
 
     .BackToMainMenuButton{
@@ -83,8 +74,9 @@
 
     .BackToMainMenuTitle{
         font-weight: bold;
-        font-size: 200%;
-        margin: 0;
+        font-size: 5vw;
+        margin-top: auto;
+        margin-bottom: auto;
         padding: 0;
         padding-left: 0.3em;
     }
@@ -96,10 +88,10 @@
     .Main_Unit {
         height: 100%;
         padding: 1em;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
+        margin-left: 2vw;
+        margin-right: 2vw;
         border: 1px solid #456BB4;
-        border-radius: 10px;
+        border-radius: 20px;
         background-color: rgb(69,107,180,0.61);
         color: black;
         display: flex;
@@ -132,37 +124,19 @@
     }
 
     .C_F{
-        margin: auto;
-        margin-right: 0;
-        width: 6vh;
+        margin-left: auto;
+        width: 12vw;
+
     }
 
-    @media only screen and (min-width: 1000px) {
-
-        .C_F{
-            margin: auto;
-            margin-right: 0;
-            width: 7vw;
-        }
-    
-    }
-
-    @media only screen and (min-height: 1000px) {
-
-        .C_F{
-            margin: auto;
-            margin-right: 0;
-            width: 7vh;
-        }
-    
-    }
     /* ---------------------------------------------------------------------- */
     
-    /* Wind unit */
+    /* All unit */
 
     .UnitContainer{
         display: flex;
-        padding-top: 8%;
+        padding-top: 4%;
+        padding-bottom: 4%;
         width: 100%;
         align-self: center;
         display: flex;
@@ -172,7 +146,7 @@
     .Unit{
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 50%;
         align-self: center;
         display: flex;
         text-align: center;
@@ -192,16 +166,28 @@
         max-height: 100%;
         height: auto;
         text-align: left;
-        margin: auto;
+        margin-right: 5vw;
         margin-left: 0.70em;
         font-size: 3vw;
         color: #00F0FF;
+        width: 90%;
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        border-radius: 20px;
+        
+    }
 
+
+    .X_units option{
+        color: white;
+        background-color: #456BB4;
+        border-radius: 20px;
     }
 
     .arrow{
         margin: auto;
-        margin-right: 1.5vh;
+        margin-right: 3.5vw;
         width: 5vw;
     }
 
