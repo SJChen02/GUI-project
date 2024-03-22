@@ -398,11 +398,13 @@ function mToMi(m){
 function changeUnitToC(){
     localStorage.setItem('tempUnit', 'C');
     getInfo3(`London`)
+    console.log("changedHAH")
 }
 
 function changeUnitToF(){
     localStorage.setItem('tempUnit', 'F');
     getInfo3(`London`)
+    console.log("changedsfsafs")
 }
 
 function kToF(k){

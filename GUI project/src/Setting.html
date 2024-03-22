@@ -30,7 +30,6 @@
 
 
 
-
         <!-- Units (title) -->
 
         <div class = "Box_Title">Units</div>
@@ -44,7 +43,7 @@
                     <div class = "X_title">Temperature</div>
                 </div>
 
-                <select class="X_units" name="TemperatureUnit" >
+                <select class="X_units" name="TemperatureUnit" id="TemperatureUnit"  onchange="changeFuncTemp();">
                     <option style="display: none;">Choose Temperature Unit</option>
                     <option value="C">Celsius (°C)</option>
                     <option value="F">Fahrenheit (°F)</option>
@@ -58,14 +57,10 @@
                     <div class = "X_title">Wind Speed</div>
                 </div>
 
-                <select class="X_units" name="WindSpeedUnit" >
+                <select class="X_units" name="WindSpeedUnit" id="WindSpeedUnit" onchange="changeFuncWindSp();">
                     <option style="display: none;">Choose Wind Speed Unit</option>
-                    <option value="km/h">Kilometres per hour(km/h)</option>
                     <option value="m/s">Metres per second(m/s)</option>
-                    <option value="ft/s">Feet per second(ft/s)</option>
                     <option value="mph">Miles Per Hour(mph)</option>
-                    <option value="knots">Nautical miles per hour(knots)</option>
-                    <option value="BeaufortScale">Beaufort Scale</option>
                 </select>
 
 
@@ -77,11 +72,10 @@
                     <div class = "X_title">Air Pressure</div>
                 </div>
 
-                <select class="X_units" name="PressureUnit" >
+                <select class="X_units" name="PressureUnit" id="PressureUnit"  onchange="changeFuncAirPressure();">
                     <option style="display: none;">Choose Air Pressure Unit</option>
                     <option value="hPa">Hectopascals (hPa)</option>
-                    <option value="mmHg">Millimetres of mercury (mmHg)</option>
-                    <option value="inHg">Inches of mercury (inHg)</option>
+                    <option value="atm">Atmosphere (atm) </option>
                 </select>
             </div>
 
@@ -91,10 +85,11 @@
                     <div class = "X_title">Visibility</div>
                 </div>
 
-                <select class="X_units" name="VisibilityUnit" >
+                <select class="X_units" name="VisibilityUnit" id="VisibilityUnit" onchange="changeFuncVisibi();">
                     <option style="display: none;">Choose Visibility Unit</option>
                     <option value="mi">Miles (mi)</option>
                     <option value="km">Kilometres (km)</option>
+                    <option value="m">Metres (m)</option>
                 </select>
             </div>
 
@@ -128,4 +123,81 @@
     </div>
 
 </body>
+
+
+<!-- Temperature unit change -->
+<script>
+
+    function changeFuncTemp() {
+        var selectBoxS = document.getElementById("TemperatureUnit");
+        var selectedValue = selectBoxS.options[selectBoxS.selectedIndex].value;
+        // alert(selectedValue)
+        if(selectedValue== "C"){
+            changeUnitToC()
+        }
+        else{
+            changeUnitToF()
+        }
+    }
+    
+</script>
+
+<!-- Wind speed unit change -->
+
+<script>
+
+    function changeFuncWindSp() {
+        var selectBoxS = document.getElementById("WindSpeedUnit");
+        var selectedValue = selectBoxS.options[selectBoxS.selectedIndex].value;
+        // alert(selectedValue)
+        if(selectedValue== "mph"){
+            changeUnitToMph()
+        }
+        if(selectedValue=="m/s"){
+            changeUnitToMs()
+        }
+    }
+    
+</script>
+
+<!-- Air Pressure unit change -->
+
+<script>
+
+    function changeFuncAirPressure() {
+        var selectBoxS = document.getElementById("PressureUnit");
+        var selectedValue = selectBoxS.options[selectBoxS.selectedIndex].value;
+        // alert(selectedValue)
+
+        if(selectedValue=="atm"){
+            changeUnitToAtm()
+        }
+        else{
+            changeUnitToHpa()
+        }
+    }
+    
+</script>
+
+<!-- Visibility unit change -->
+
+<script>
+
+    function changeFuncVisibi() {
+        var selectBoxS = document.getElementById("VisibilityUnit");
+        var selectedValue = selectBoxS.options[selectBoxS.selectedIndex].value;
+        // alert(selectedValue)
+        if(selectedValue== "km"){
+            changeUnitToKm()
+        }
+        if(selectedValue=="m"){
+            changeUnitToM()
+        }
+        else{
+            changeUnitToMi()
+        }
+    }
+    
+</script>
+
 </html>
