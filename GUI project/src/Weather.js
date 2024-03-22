@@ -1,3 +1,74 @@
+window.onload = function() { 
+    if(localStorage.getItem('theme')) { 
+        checkTheme(localStorage.getItem('theme'));
+    }
+}
+
+function checkTheme(theme) {
+    const stylesheet = document.getElementById("theme");
+
+    if (theme == null) {
+        localStorage.setItem("theme", "default");
+        theme = localStorage.getItem("theme");
+    }
+
+    if (document.URL.includes("Setting.html")) {
+        checkThemeSetting(stylesheet, theme);
+    }
+    if (document.URL.includes("index.html")) {
+        checkThemeIndex(stylesheet, theme);
+    }
+
+    if (document.URL.includes("Reminder.html")) {
+        checkThemeReminder(stylesheet, theme);
+    }
+    
+    function checkThemeReminder(stylesheet, theme) {
+        if (theme == "darkMode") {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/Reminder_DarkMode.css';
+        }
+        if (theme == "qmColours") {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/Reminder_QM_Colours.css';
+        }
+        if (theme == "default" && stylesheet) {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/Reminder.css';
+        }
+    }
+
+    function checkThemeIndex(stylesheet, theme) {
+        if (theme == "darkMode") {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/index_DarkMode.css';
+        }
+        if (theme == "qmColours") {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/index_QM_Colours.css';
+        }
+        if (theme == "default" && stylesheet) {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/index.css';
+        }
+    }
+
+    function checkThemeSetting(stylesheet, theme) {
+        if (theme == "darkMode") {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/Setting_DarkMode.css';
+        }
+        if (theme == "qmColours") {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/Setting_QM_Colours.css';
+        }
+        if (theme == "default" && stylesheet) {
+            localStorage.setItem("theme", theme)
+            stylesheet.href = 'css/Setting.css';
+        }
+    }
+}
+
 async function getInfo(nlat,nlon){
     const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${nlat}&lon=${nlon}&appid=b3e79ab765ac55b063567e2787d48609`)
     const json = await res.json()

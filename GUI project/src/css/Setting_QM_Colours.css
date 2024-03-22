@@ -9,7 +9,7 @@
         word-spacing: 1.4px; */
         display: flex;
         height: 100%;
-        background-color: #5B8EF0;
+        background-color: white;
     }
     
     /* Special title for each box */
@@ -20,6 +20,7 @@
         margin-bottom: 0.5em;
         font-weight: bold;
         font-size: 4vw;
+        color: rgb(13, 55, 133);
     }
 
 
@@ -41,7 +42,6 @@
         display: flex;
         align-self: left;
         margin-right: auto;
-
     }
 
 
@@ -56,8 +56,8 @@
         cursor: pointer;
         width: 150%;
         height: 150%;
-        
     }
+
     .BackButton img{
         align-items: center;
         text-align: center;
@@ -69,7 +69,6 @@
 
     .BackToMainMenuButton{
         display: flex;
-       
     }
 
     .BackToMainMenuTitle{
@@ -90,21 +89,17 @@
         padding: 1em;
         margin-left: 2vw;
         margin-right: 2vw;
-        border: 1px solid #456BB4;
+        border: 1px solid #49b8f8;
         border-radius: 20px;
-        background-color: rgb(69,107,180,0.61);
-        color: black;
+        background-color: rgb(13, 55, 133);
+        color: white;
         display: flex;
-        flex-direction: column;
-        
+        flex-direction: column
     }
     
     /* ---------------------------------------------------------------------- */
-
     
     /* Temperature unit , box 1*/
-
-
 
     .TemperatureUnit{
         width: 100%;
@@ -120,13 +115,12 @@
         margin: auto;
         margin-left: 0.2em;
         font-size: 5.5vw;
-
     }
 
     .C_F{
         margin-left: auto;
         width: 12vw;
-
+        filter: invert(1);
     }
 
     /* ---------------------------------------------------------------------- */
@@ -159,7 +153,7 @@
         margin: auto;
         margin-left: 0.2em;
         font-size: 5.5vw;
-
+        color: white;
     }
 
     .X_units{
@@ -169,19 +163,18 @@
         margin-right: 5vw;
         margin-left: 0.70em;
         font-size: 3vw;
-        color: #00F0FF;
         width: 90%;
         background-color: transparent;
         border: 0;
         outline: none;
         border-radius: 20px;
-        
+        color: white;
     }
 
 
     .X_units option{
         color: white;
-        background-color: #456BB4;
+        background-color: rgba(45, 50, 59, 0.61);
         border-radius: 20px;
     }
 
@@ -189,8 +182,10 @@
         margin: auto;
         margin-right: 3.5vw;
         width: 5vw;
+        filter: invert(1);
     }
-/* ---------------------------------------------------------------------- */
+
+    /* ---------------------------------------------------------------------- */
     
     /* Theme Buttons */
 

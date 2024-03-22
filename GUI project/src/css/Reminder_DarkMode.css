@@ -1,0 +1,131 @@
+@media only screen and (max-width: 10000000px) {
+    body{
+        margin: 0;
+        padding: 0;
+        /* line-height: 1.6;
+        word-spacing: 1.4px; */
+        display: flex;
+        height: 100%;
+        background-color: #1a1d24;
+    }
+
+    .MainMenu {
+        width: 100%;
+        height: 100%;
+        /* border: 10px solid; */
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+    
+    
+    .MainMenuButton{
+        display: flex;
+        align-self: left;
+        margin-right: auto;
+    
+    }
+    
+    
+    .BackButton{
+        display: flex;
+        margin: 1em;
+    }
+    
+    .BackButton button{
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        width: 150%;
+        height: 150%;
+        color: white;
+    }
+    .BackButton img{
+        align-items: center;
+        text-align: center;
+        width: 30px;
+        filter: invert(1);
+    }
+    
+    .BackToMainMenuButton{
+        display: flex;
+       
+    }
+    
+    .BackToMainMenuTitle{
+        font-weight: bold;
+        font-size: 200%;
+        margin: 0;  
+        padding: 0;
+        padding-left: 0.3em;
+    }
+
+    /* Reminder Title / Title */
+    .Box_Title{
+        padding-left: 1em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-weight: bold;
+        font-size: 200%;
+    }
+
+    /* Reminder Box / content */
+    .Reminder_Box {
+        height: 100%;
+        padding: 1em;
+        margin-top: 0.75em;
+        margin-left: 1em;
+        margin-right: 1em;
+        border: 1px solid #232425;
+        border-radius: 10px;
+        background-color: rgba(45, 50, 59, 0.61);
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Reminder_Title{
+        padding-left: 1em;
+        margin-left: -0.8em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-weight: bold;
+        font-size: 200%;
+    }
+
+    .Time_Box{
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        font-size: 300%;
+        text-align: center;
+    }
+    
+    .Text_Box{
+        margin: 1em;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+        font-size: 150%;
+        margin-left: 0em;
+        margin-right: 0em;
+    }
+
+    .Button{
+        height: 100%;
+        width: 100%;
+        border: 1px solid #232425;
+        border-radius: 10px;
+        background-color: rgba(45, 50, 59, 0.61);
+        color: white;
+        font-size: 200%;
+        text-align: center;
+        margin-top: 1em;
+        padding: 1em;
+        margin-bottom: 0.5em;
+
+    }
+
+
+}

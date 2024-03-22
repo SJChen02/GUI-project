@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/Setting.css" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link id="theme" href="css/Setting.css" rel="stylesheet" type="text/css" />
+    <script src="Weather.js"></script>
     <title>Document</title>
-</head>
+  </head>
 
 
 <body>
@@ -99,8 +100,31 @@
 
             
 
+            
+         <!-- Colour Scheme Button -->
+         <div class="themeButtons">
+            <button
+              id="darkMode"
+              class="button darkMode"
+              onclick="checkTheme('darkMode')"
+            >
+              Dark Mode
+            </button>
+            <button
+              id="qmColours"
+              class="button QMColours"
+              onclick="checkTheme('qmColours')"
+            >
+              QM Colour Scheme
+            </button>
+            <button id="default" class="button" onclick="checkTheme('default')">
+              Default Colour Scheme
+            </button>
+          </div>
         </div>
+        
 
+        </div>
     </div>
 
 </body>
