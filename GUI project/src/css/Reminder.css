@@ -112,17 +112,18 @@
 
     .Button{
         height: 100%;
-        width: 96.5%;
-        padding: 1em;
-        margin-top: 0.75em;
-        margin-left: 0.5em;
-        margin-right: 1.2em;
+        width: 100%;
         border: 1px solid #456BB4;
         border-radius: 10px;
         background-color: rgba(15, 46, 104, 0.61);
         color: white;
         font-size: 200%;
         text-align: center;
+        margin-top: 1em;
+        padding: 1em;
+        margin-bottom: 0.5em;
+
     }
+
 
 }
