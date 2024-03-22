@@ -86,7 +86,11 @@ async function getInfo(nlat,nlon){
             timeResult+=  `<div class="Time_Item">${next_time}</div>`
         }
         
-        tempResult+= `<div class="Temperature-WeatherForecast-container"> ${Math.round(kToC(info[weatherDate].main.temp)) + "°"}</div>`
+        if (localStorage.getItem('tempUnit') === 'C') {
+            tempResult+= `<div class="Temperature-WeatherForecast-container"> ${Math.round(kToC(info[weatherDate].main.temp)) + "°"}</div>`;
+        } else if (localStorage.getItem('tempUnit') === 'F'){
+            tempResult+= `<div class="Temperature-WeatherForecast-container"> ${Math.round(kToF(info[weatherDate].main.temp)) + "°"}</div>`;
+        }
     }
 
     
@@ -110,7 +114,13 @@ async function getInfo(nlat,nlon){
 
         weekdayResult+= `<div class="Weekly_Time_container"> ${weekday[week]}</div>`
         
-        tempDiffResult+= `<div class="Weekly_Time_container"> ${Math.ceil(kToC(info[day].main.temp_max)) + "°"}/${Math.floor(kToC(info[day].main.temp_min)) + "°"} </div>`
+        if (localStorage.getItem('tempUnit') === 'C') {
+            tempDiffResult+= `<div class="Weekly_Time_container"> ${Math.ceil(kToC(info[day].main.temp_max)) + "°"}/${Math.floor(kToC(info[day].main.temp_min)) + "°"} </div>`;
+        } else if (localStorage.getItem('tempUnit') === 'F'){
+            tempDiffResult+= `<div class="Weekly_Time_container"> ${Math.ceil(kToF(info[day].main.temp_max)) + "°"}/${Math.floor(kToF(info[day].main.temp_min)) + "°"} </div>`
+        }
+        
+        
     }
     
     document.getElementById('weekDay').innerHTML= weekdayResult;
@@ -131,10 +141,14 @@ async function getTodayInfo(nlat,nlon){
     const json = await res.json()
     console.log(json)
 
-    const info = json.main
-    document.getElementById('todayDateTemp').innerHTML= `${Math.round(kToC(info.temp)) + "°"}`;
-    // document.getElementById('nowTemp').innerHTML= `<div class="Temperature-WeatherForecast> ${Math.round(kToC(info.temp)) + "°"}</div>`;
-    document.getElementById('differentTemp').innerHTML = `<div class="Weekly_Time_container"> ${Math.ceil(kToC(info.temp_max)) + "°"}/${Math.floor(kToC(info.temp_min)) + "°"} </div>`;
+    const info = json.main    
+    if (localStorage.getItem('tempUnit') === 'C') {
+        document.getElementById('todayDateTemp').innerHTML= `${Math.round(kToC(info.temp)) + "°"}`;
+        document.getElementById('differentTemp').innerHTML = `<div class="Weekly_Time_container"> ${Math.ceil(kToC(info.temp_max)) + "°"}/${Math.floor(kToC(info.temp_min)) + "°"} </div>`;
+    } else if (localStorage.getItem('tempUnit') === 'F'){
+        document.getElementById('todayDateTemp').innerHTML= `${Math.round(kToF(info.temp)) + "°"}`;
+        document.getElementById('differentTemp').innerHTML = `<div class="Weekly_Time_container"> ${Math.ceil(kToF(info.temp_max)) + "°"}/${Math.floor(kToF(info.temp_min)) + "°"} </div>`;
+    }
 
     const date = new Date()
     let day = date.getDate();
@@ -147,12 +161,39 @@ async function getTodayInfo(nlat,nlon){
     document.getElementById('umbrellaTdyCheck').innerHTML= `${checkBringUmbrella(json)}`;
     document.getElementById('weatherLocation').innerHTML= `${weatherLocation(json)}`;
 
-    document.getElementById('feelLikeData').innerHTML= `${Math.ceil(kToC(info.feels_like)) + "°"}`;
+    if (localStorage.getItem('tempUnit') === 'C') {
+        document.getElementById('feelLikeData').innerHTML= `${Math.ceil(kToC(info.feels_like)) + "°"}`;
+    } else if (localStorage.getItem('tempUnit') === 'F'){
+        document.getElementById('feelLikeData').innerHTML= `${Math.ceil(kToF(info.feels_like)) + "°"}`;
+    }
+    
     document.getElementById('humidityData').innerHTML= `${info.humidity + "%"}`;
     document.getElementById('windDirectionData').innerHTML= `${degreesToCompass(json.wind.deg)}`;
-    document.getElementById('windSpeedData').innerHTML= `${Math.floor(msToMph(json.wind.speed)) + "mph"}`;
-    document.getElementById('pressureData').innerHTML= `${info.pressure + "hPa"}`;
-    document.getElementById('visibilityData').innerHTML= `${mToKm(json.visibility) + "km"}`;
+
+    if (localStorage.getItem('windSpeedUnit') === 'ms') {
+        document.getElementById('windSpeedData').innerHTML = `${Math.floor(json.wind.speed) + " m/s"}`;
+    } else if (localStorage.getItem('windSpeedUnit') === 'mph'){
+        document.getElementById('windSpeedData').innerHTML = `${Math.floor(msToMph(json.wind.speed)) + " mph"}`;
+    }
+
+    if (localStorage.getItem('airPressureUnit') === 'atm') {
+        document.getElementById('pressureData').innerHTML = `${hpaToAtm(info.pressure).toFixed(5) + " atm"}`;
+    } else if (localStorage.getItem('airPressureUnit') === 'hPa') {
+        document.getElementById('pressureData').innerHTML = `${info.pressure +"hPa"}`;
+    }
+    else if (localStorage.getItem('airPressureUnit') === 'bar') {
+        document.getElementById('pressureData').innerHTML = `${hpaToBar(info.pressure).toFixed(3) +"bar"}`;
+    }
+
+    if (localStorage.getItem('visibilityUnit') === 'km') {
+        document.getElementById('visibilityData').innerHTML= `${mToKm(json.visibility) + "km"}`;
+    } else if (localStorage.getItem('visibilityUnit') === 'mi') {
+        document.getElementById('visibilityData').innerHTML = `${mToMi(info.pressure).toFixed(2) +"mi"}`;
+    }
+    else if (localStorage.getItem('visibilityUnit') === 'm') {
+        document.getElementById('visibilityData').innerHTML= `${json.visibility + "m"}`;
+    }
+
     document.getElementById('sunriseData').innerHTML= `${unixToTime(json.sys.sunrise)}`;
     document.getElementById('sunsetData').innerHTML= `${unixToTime(json.sys.sunset)}`;
 }
@@ -302,3 +343,68 @@ function trianLineName(tn){
     }
 }
 
+function changeUnitToMs(){
+    localStorage.setItem('windSpeedUnit', 'ms');
+    getInfo3(`London`)
+}
+
+function changeUnitToMph(){
+    localStorage.setItem('windSpeedUnit', 'mph');
+    getInfo3(`London`)
+}
+
+function changeUnitToHpa(){
+    localStorage.setItem('airPressureUnit', 'hPa');
+    getInfo3(`London`)
+}
+
+function changeUnitToBar(){
+    localStorage.setItem('airPressureUnit', 'bar');
+    getInfo3(`London`)
+}
+
+function changeUnitToAtm(){
+    localStorage.setItem('airPressureUnit', 'atm');
+    getInfo3(`London`)
+}
+
+function hpaToAtm(hpa){
+    return hpa * 0.000987
+}
+
+function hpaToBar(hpa){
+    return hpa /1000
+}
+
+function changeUnitToKm(){
+    localStorage.setItem('visibilityUnit', 'km');
+    getInfo3(`London`)
+}
+
+function changeUnitToM(){
+    localStorage.setItem('visibilityUnit', 'm');
+    getInfo3(`London`)
+}
+
+function changeUnitToMi(){
+    localStorage.setItem('visibilityUnit', 'mi');
+    getInfo3(`London`)
+}
+
+function mToMi(m){
+    return m *0.000621
+}
+
+function changeUnitToC(){
+    localStorage.setItem('tempUnit', 'C');
+    getInfo3(`London`)
+}
+
+function changeUnitToF(){
+    localStorage.setItem('tempUnit', 'F');
+    getInfo3(`London`)
+}
+
+function kToF(k){
+    return 1.8 *(k-273.15)+32
+}
