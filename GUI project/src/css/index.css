@@ -424,12 +424,15 @@
 
 
     .TFL_icon{
-        width: 3.75em;
+        width: 12vw;
+        height: 11vw;
         padding-top: 0.2em;
     }
     .Strike{
         padding-left: 0.3em;
-        font-size: 3em;
+        font-size: 6vw;
+        margin-top: auto;
+        margin-bottom: auto;
         color: #42FE13;
     }
 
