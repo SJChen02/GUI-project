@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Reminder.css">
+    <script src="Weather.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class = "MainMenu">
+
+        <!-- Back to Main menu -->
+        <div class="MainMenuButton">
+            <form action="index.html" class="BackButton">
+                <button type="submit">
+
+                    <div class= "BackToMainMenuButton">
+                        <img src="img/BackArrow.png" alt="BackToMainMenu">
+                        <p class="BackToMainMenuTitle">Main Menu</p>
+                    </div>
+                    
+                </button>
+            </form>
+        </div>
+
+
+    <form  id = "form">
+            <!-- Reminder Title div-->
+            <div class="Box_Title">Reminder</div>
+    
+            <!-- Reminder Box div, 3 sections-->
+            <div class="Reminder_Box" id="frame">
+                <div class = "Time_Box">19/09/2024</div>
+                
+                <textarea class = "Text_Box" name="TB" id="Reminder_Text" cols="30" rows="10" placeholder="Write Reminder..."></textarea>
+    
+                <div class="Reminder_Title">Set a date to remind you</div>
+                <input class = "Time_Box" type="date" placeholder="dd/mm/yyyy" name="Date" id="Date_of_Reminder">
+                <div class="Reminder_Title">Set a time to remind you</div>
+                <input class ="Time_Box" type="time" name = "Time" id="Time_of_Reminder">
+            </div>
+            
+            <!-- Button div-->
+
+            <button type = "submit" class = "Button">Set Reminder</button>
+    </form>
+
+
+    <script>
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            var remText = document.getElementById('Reminder_Text');
+            var remDate = document.getElementById('Date_of_Reminder');
+            var remTime = document.getElementById('Time_of_Reminder');
+
+            var ReminderTextValue = remText.value;
+            var ReminderDatevalue = remDate.value;
+            var ReminderTimevalue = remTime.value;
+
+            localStorage.setItem('ReminderText', ReminderTextValue);
+            localStorage.setItem('DateOfReminder', ReminderDatevalue);
+            localStorage.setItem('TimeOfReminder', ReminderTimevalue);
+
+            window.location.href = "confirm.html"
+        })
+
+
+        function Zero(value) {
+            if (value < 10) {
+                return "0" + value.toString();
+            }
+            return value.toString();
+        }
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+
+
+        let RemindDate = "";
+        RemindDate += 
+        
+        `<div class = "Time_Box">19/09/2024</div>
+                
+                <textarea class = "Text_Box" name="TB" id="Reminder_Text" cols="30" rows="10" placeholder="Write Reminder..."></textarea>
+    
+                <div class="Reminder_Title">Set a date to remind you</div>
+                <input class = "Time_Box" type="date" placeholder="dd/mm/yyyy" name="Date" id="Date_of_Reminder" min="`+ yyyy+`-`+Zero(mm)+`-` + dd +`" max="9999-12-31">
+                <div class="Reminder_Title">Set a time to remind you</div>
+                <input class ="Time_Box" type="time" name = "Time" id="Time_of_Reminder">`
+
+
+
+        document.getElementById('frame').innerHTML= RemindDate
+
+    </script>
+</body>
+</html>
