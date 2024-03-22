@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/Reminder.css">
     <title>Document</title>
 </head>
+
+
 <body>
     <div class = "MainMenu">
 
@@ -31,12 +33,18 @@
     
             <!-- Reminder Box div, 3 sections-->
             <div class="Reminder_Box" id="frame">
-                <div class = "Time_Box">19/09/2024</div>
+
+                <div class = "Time_Box" id="DateOfEvent"></div>
                 
                 <textarea class = "Text_Box" name="TB" id="Reminder_Text" cols="30" rows="10" placeholder="Write Reminder..."></textarea>
     
                 <div class="Reminder_Title">Set a date to remind you</div>
-                <input class = "Time_Box" type="date" placeholder="dd/mm/yyyy" name="Date" id="Date_of_Reminder">
+
+
+                <input class = "Time_Box" type="date" name="Date" id="Date_of_Reminder">
+
+
+
                 <div class="Reminder_Title">Set a time to remind you</div>
                 <input class ="Time_Box" type="time" name = "Time" id="Time_of_Reminder">
             </div>
@@ -47,8 +55,94 @@
     </form>
 
 
+
+
+
+    
+
     <script>
-        form.addEventListener('submit', function(e){
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        
+        //Change the date on top. To show date of event
+
+        let TheDay = localStorage.getItem("EventDate");
+        let EventDate = "";
+
+        // setting up minimum calendar date
+
+        function Zero(value) {
+            if (value < 10) {
+                return "0" + value.toString();
+            }
+            return value.toString();
+        }
+
+
+        //replacing html code
+
+        let RemindDate = "";
+        RemindDate += 
+        
+        `<div class = "Time_Box">`+TheDay+`</div> 
+                
+                <textarea class = "Text_Box" name="TB" id="Reminder_Text" cols="30" rows="10" placeholder="Write Reminder...">`+getTextForDate(TheDay)+`</textarea>
+    
+                <div class="Reminder_Title">Set a date to remind you</div>
+                <input class = "Time_Box" type="date" name="Date" id="Date_of_Reminder" min="`+yyyy+`-`+Zero(mm)+`-`+dd+`" max="9999-12-31">
+                <div class="Reminder_Title">Set a time to remind you</div>
+                <input class ="Time_Box" type="time" name = "Time" id="Time_of_Reminder">
+        `
+        
+        // <input class = "Time_Box" type="date" name="Date" id="Date_of_Reminder" min="2024-03-19" max="9999-12-31">
+
+        document.getElementById('frame').innerHTML= RemindDate
+
+
+
+
+        //code that stores a date and reminder
+
+        var correlations = {};
+
+        //sets data
+        function correlate(date, text) {
+            const array = JSON.parse(localStorage.getItem("correlations")) || [];
+            
+            correlations[date] = text;
+            localStorage.setItem('correlations', JSON.stringify(correlations));
+        }
+
+        //gets data
+        function getTextForDate(date) {
+            correlations = JSON.parse(localStorage.getItem('correlations'));
+
+            if (correlations[date] != undefined){
+                return correlations[date]
+            }
+            else{
+                return ""
+            }
+        }
+
+        //testing
+        correlate('2024-03-21', 'This is to set up...');
+
+        console.log(getTextForDate('2024-03-21')); 
+
+        // correlate(TheDay, 'test1');
+
+        // console.log(getTextForDate(TheDay)); 
+
+        // console.log(correlations)
+
+        
+
+         // stores content
+         form.addEventListener('submit', function(e){
             e.preventDefault();
 
             var remText = document.getElementById('Reminder_Text');
@@ -59,42 +153,18 @@
             var ReminderDatevalue = remDate.value;
             var ReminderTimevalue = remTime.value;
 
-            localStorage.setItem('ReminderText', ReminderTextValue);
-            localStorage.setItem('DateOfReminder', ReminderDatevalue);
-            localStorage.setItem('TimeOfReminder', ReminderTimevalue);
 
-            window.location.href = "confirm.html"
-        })
-
-
-        function Zero(value) {
-            if (value < 10) {
-                return "0" + value.toString();
+            if (ReminderTextValue!="" && ReminderDatevalue!="" && ReminderTimevalue!=""){
+                console.log(TheDay)
+                console.log(ReminderTextValue)
+                correlate(TheDay,ReminderTextValue);
+                window.location.href = "index.html"
             }
-            return value.toString();
-        }
+            else{
+                alert("You havent filled in all details, Please double check.")
+            }
 
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1;
-        var yyyy = today.getFullYear();
-
-
-        let RemindDate = "";
-        RemindDate += 
-        
-        `<div class = "Time_Box">19/09/2024</div>
-                
-                <textarea class = "Text_Box" name="TB" id="Reminder_Text" cols="30" rows="10" placeholder="Write Reminder..."></textarea>
-    
-                <div class="Reminder_Title">Set a date to remind you</div>
-                <input class = "Time_Box" type="date" placeholder="dd/mm/yyyy" name="Date" id="Date_of_Reminder" min="`+ yyyy+`-`+Zero(mm)+`-` + dd +`" max="9999-12-31">
-                <div class="Reminder_Title">Set a time to remind you</div>
-                <input class ="Time_Box" type="time" name = "Time" id="Time_of_Reminder">`
-
-
-
-        document.getElementById('frame').innerHTML= RemindDate
+        })
 
     </script>
 </body>

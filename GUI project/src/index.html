@@ -20,22 +20,19 @@
             </form>
        
 
-            <!-- SearchBar -->
+            <!-- QuickBar -->
 
-            <form action="" class="search-bar-background">
-                <input type="text" placeholder="Search..." list="options">
-                <datalist id="options">
-                    <option value="Hourly Forecast">Hourly Forecast</option>
-                    <option value="Weekly Forecast">Weekly Forecast</option>
-                    <option value="Train Delay">Train Delay</option>
-                    <option value="Umbrella Reminder">Umbrella Reminder</option>
-                    <option value="Weekly Forecast">Weekly Forecast</option>
-                </datalist>
-
-                <button type="submit"><img src="img/Magnifyingglass.png" alt="SearchButton"></button>
-                <!-- <button type="submit"><img src="img/Arrow.png" alt="cancelButton"></button> -->
-            </form>
-    
+            <div class="dropdown">
+                <button class="dropbtn">QuickBar</button>
+                <div class="dropdown-content">
+                  <a href="#3-Hour">3-Hour Forecast</a>
+                  <a href="#WeeklyForeCast">Weekly ForeCast</a>
+                  <a href="#Train_Delay">Train Delay</a>
+                  <a href="#Umbrella_Reminder">Umbrella</a>
+                  <a href="#Calendar_rem">Reminder</a>
+                  <a href="#W_detail">Weather details</a>
+                </div>
+            </div>
 
 
         <!-- Box1, abt weather/temperature -->
@@ -80,7 +77,7 @@
         
         <!-- Box2, abt hourly forecast (title) -->
 
-        <div class = "Box_Title">3-Hour Forecast</div>
+        <div class = "Box_Title" id="3-Hour">3-Hour Forecast</div>
 
         <!-- Box2 - Core code -->
         <div class = "Main_WeeklyForecast">
@@ -112,7 +109,7 @@
 
         <!-- Box3, abt weekly forecast (title) -->  
         
-        <div class = "Box_Title">Weekly Forecast</div>
+        <div class = "Box_Title" id="WeeklyForeCast">Weekly Forecast</div>
 
         <!-- Box3 - Core code -->
 
@@ -145,7 +142,7 @@
 
         <!-- Box4, abt train delay (title) -->  
 
-        <div class = "Box_Title">Train Delay</div>  
+        <div class = "Box_Title" id="Train_Delay">Train Delay</div>  
 
         <!-- Box4, Core code -->  
 
@@ -195,7 +192,7 @@
 
         <!-- Box5, abt umbrella reminder (title) -->  
 
-        <div class = "Box_Title">Umbrella Reminder</div>  
+        <div class = "Box_Title" id="Umbrella_Reminder">Umbrella Reminder</div>  
 
         <!-- Box5, Core code -->  
 
@@ -221,27 +218,24 @@
         
         <!-- Box6, abt Calendar (title) -->  
 
-        <div class = "Box_Title">Calendar</div>  
+        <div class = "Box_Title" id="Calendar_rem">Reminder</div>  
 
         <!-- Box6, Core code -->  
 
         <div class = "Main_Calendar">
-
-            <!-- placeholder for calendar -->
-            <form action="Reminder.html" >
-                <button class = "Button"> <img class=CalendarIcon src="img/UmbrellaIcon.png" alt="Calendar"></button>
+            <div class="reminder">Select a date to remind an event</div>
+            <form id="frame">
+                <!-- html filled with js code -->
+                
             </form>
-           
-
         </div>
-
 
 
 
 
         <!-- Box7, abt Weather Detail (title) -->  
 
-        <div class = "Box_Title">Weather details</div>  
+        <div class = "Box_Title" id="W_detail">Weather details</div>  
 
         <!-- Box7, Core code -->  
 
@@ -320,6 +314,63 @@
         <!-- javascript -->
 
         <script src="Weather.js"></script>
+
+
+
+        <script>
+
+
+        // stores date of event
+        frame.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            var EventDay = document.getElementById('Date_of_Reminder');
+
+            var EventDate = EventDay.value;
+
+            if (EventDate!=""){
+                localStorage.setItem('EventDate', EventDate);
+                // console.log(localStorage.getItem("EventDate"))
+                window.location.href = "Reminder.html"
+
+            }
+            else{
+                alert("Error! Pick a date to remind an event")
+            }
+        })
+
+
+        // setting up minimum calendar date
+            
+            function Zero(value) {
+                if (value < 10) {
+                    return "0" + value.toString();
+                }
+                return value.toString();
+            }
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+
+
+            let RemindDate = "";
+            RemindDate += 
+            `  
+            <form id="frame">
+                <input class = "Time_Box" type="date" name="Date" id="Date_of_Reminder" min="`+ yyyy+`-`+Zero(mm)+`-` + dd +`" max="9999-12-31">
+            
+                <button type = "submit" class = "DateSelect">Set Reminder</button>
+            </form>
+            
+            `
+
+            
+
+
+            document.getElementById('frame').innerHTML= RemindDate
+        </script>
         
 
     </div>
