@@ -90,7 +90,12 @@ async function getTodayInfo(nlat,nlon){
     document.getElementById('umbrellaTdyCheck').innerHTML= `${checkBringUmbrella(json)}`;
     document.getElementById('weatherLocation').innerHTML= `${weatherLocation(json)}`;
 
-    document.getElementById('feelLikeData').innerHTML= `${Math.ceil(kToC(info.feels_like)) + "°"}`;
+    if (localStorage.getItem('tempUnit') === 'C') {
+        document.getElementById('feelLikeData').innerHTML= `${Math.ceil(kToC(info.feels_like)) + "°"}`;
+    } else if (localStorage.getItem('tempUnit') === 'F'){
+        document.getElementById('feelLikeData').innerHTML= `${Math.ceil(kToF(info.feels_like)) + "°"}`;
+    }
+    
     document.getElementById('humidityData').innerHTML= `${info.humidity + "%"}`;
     document.getElementById('windDirectionData').innerHTML= `${degreesToCompass(json.wind.deg)}`;
 
